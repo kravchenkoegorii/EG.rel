@@ -1,10 +1,20 @@
 using EG.rel;
+using Microsoft.EntityFrameworkCore;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        CreateHostBuilder(args).Build().Run();
+        var host = CreateHostBuilder(args).Build();
+        using (var scope = host.Services.CreateScope())
+        {
+            var context = scope.ServiceProvider.GetRequiredService<WeatherDbContext>();
+            if (context.Database.GetPendingMigrations().Any())
+            {
+                context.Database.Migrate();
+            }
+        }
+        host.Run();
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>

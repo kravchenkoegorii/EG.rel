@@ -15,7 +15,15 @@ namespace EG.rel
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<WeatherDbContext>(opt => opt.UseNpgsql("Host=localhost;Username=postgres;Password=postgres;Database=testdb"));
+            services.AddDbContext<WeatherDbContext>(options => options
+           .UseLazyLoadingProxies()
+           .EnableSensitiveDataLogging()
+           .UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), o =>
+           {
+               o.UseNetTopologySuite();
+           })
+           .UseSnakeCaseNamingConvention());
+            services.AddSwaggerGen();
             services.AddControllers();
             services.AddCors();
         }
@@ -27,13 +35,22 @@ namespace EG.rel
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger(options =>
+            {
+                options.RouteTemplate = "/swagger/{documentName}/swagger.json";
+            });
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "EG.rel.WebApi v1");
+            }
+            );
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseSwagger();
 
-            /*app.UseAuthentication();
-            app.UseAuthorization();*/
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseCors(builder =>
             {
