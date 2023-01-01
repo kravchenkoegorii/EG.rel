@@ -1,3 +1,6 @@
+using Eg.rel.AuthService.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Eg.rel.AuthService
 {
     public class Program
@@ -7,7 +10,7 @@ namespace Eg.rel.AuthService
             var host = CreateHostBuilder(args).Build();
             using (var scope = host.Services.CreateScope())
             {
-                var context = scope.ServiceProvider.GetRequiredService<>();
+                var context = scope.ServiceProvider.GetRequiredService<UserContext>();
                 if (context.Database.GetPendingMigrations().Any())
                 {
                     context.Database.Migrate();

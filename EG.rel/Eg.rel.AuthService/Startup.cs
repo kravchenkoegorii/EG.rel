@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Eg.rel.AuthService.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -15,14 +16,15 @@ namespace Eg.rel.AuthService
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<WeatherDbContext>(options => options
+            services.AddDbContext<UserContext>(options => options
            .UseLazyLoadingProxies()
            .EnableSensitiveDataLogging()
-           .UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), o =>
+           .UseNpgsql(Configuration.GetConnectionString("AuthServiceDb"), o =>
            {
                o.UseNetTopologySuite();
            })
            .UseSnakeCaseNamingConvention());
+
             services.AddSwaggerGen();
             services.AddControllers();
             services.AddCors();
