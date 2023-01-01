@@ -11,7 +11,7 @@ namespace Eg.rel.AuthService.Services
         private readonly SymmetricSecurityKey _key;
         public TokenService(IConfiguration config)
         {
-            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetValue<string>("Token:Secret")));
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetValue<string>("Config:JwtSignGuid")));
         }
 
         public string CreateToken(UserEntity user)

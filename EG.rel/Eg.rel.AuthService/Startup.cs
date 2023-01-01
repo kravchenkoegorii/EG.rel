@@ -18,7 +18,7 @@ namespace Eg.rel.AuthService
             services.AddDbContext<UserContext>(options => options
            .UseLazyLoadingProxies()
            .EnableSensitiveDataLogging()
-           .UseNpgsql(Configuration.GetConnectionString("AuthServiceDb"), o =>
+           .UseNpgsql(Configuration.GetSection("Config:ConnectionString").Value, o =>
            {
                o.UseNetTopologySuite();
            })
