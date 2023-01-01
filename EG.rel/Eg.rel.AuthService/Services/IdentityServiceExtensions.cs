@@ -14,7 +14,7 @@ namespace Eg.rel.AuthService.Services
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetValue<string>("Token:Secret"))),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetValue<string>("Config:JwtSignGuid"))),
                         ValidateIssuer = false,
                         ValidateAudience = false,
                     };
