@@ -16,7 +16,7 @@ namespace Eg.rel.AuthService.Controllers
         public AuthController(IConfiguration configuration, IAuthorizationService authorizationService)
         {
             _configuration = configuration;
-            authorizationService = _authorizationService;
+            _authorizationService = authorizationService;
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Eg.rel.AuthService.Controllers
         [SwaggerOperation(
             Description = "Registers new user.",
             Summary = "Registers new user.")]
-        public async Task<IActionResult> Register(RegisterDto registerDto, CancellationToken token)
+        public async Task<IActionResult> Register(RegisterDto registerDto)
         {
             if (await _authorizationService.UserExists(registerDto.Email))
                 return BadRequest("Username is taken!");
