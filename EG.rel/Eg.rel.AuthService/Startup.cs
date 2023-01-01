@@ -1,8 +1,6 @@
 ﻿using Eg.rel.AuthService.Data;
 using Eg.rel.AuthService.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using System.Reflection;
 
 namespace Eg.rel.AuthService
 {

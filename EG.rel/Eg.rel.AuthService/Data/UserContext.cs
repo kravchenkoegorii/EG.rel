@@ -9,4 +9,4 @@ namespace Eg.rel.AuthService.Data
 
         public DbSet<UserEntity> Users { get; set; }
     }
-}   
+}

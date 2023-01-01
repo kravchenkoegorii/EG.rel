@@ -2,7 +2,6 @@
 using Eg.rel.AuthService.DTOs;
 using Eg.rel.AuthService.Exceptions;
 using Eg.rel.AuthService.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;

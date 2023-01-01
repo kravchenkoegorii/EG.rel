@@ -1,5 +1,4 @@
 ﻿using Eg.rel.AuthService.DTOs;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Eg.rel.AuthService.Services
 {
