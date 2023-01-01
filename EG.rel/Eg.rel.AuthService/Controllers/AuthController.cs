@@ -8,7 +8,7 @@ namespace Eg.rel.AuthService.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class AuthController
+    public class AuthController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IAuthorizationService _authorizationService;
@@ -27,11 +27,10 @@ namespace Eg.rel.AuthService.Controllers
         [SwaggerOperation(
             Description = "Registers new user.",
             Summary = "Registers new user.")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto, CancellationToken token)
+        public async Task<IActionResult> Register(RegisterDto registerDto, CancellationToken token)
         {
             if (await _authorizationService.UserExists(registerDto.Email))
                 return BadRequest("Username is taken!");
-
             return Ok(await _authorizationService.Register(registerDto));
         }
 
@@ -46,8 +45,7 @@ namespace Eg.rel.AuthService.Controllers
             )]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
-            var result = await _authorizationService.Login(loginDto);
-            return Ok(result);
+            return Ok(await _authorizationService.Login(loginDto));
         }
     }
 }
