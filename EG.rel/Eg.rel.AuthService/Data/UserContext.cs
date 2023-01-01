@@ -7,6 +7,6 @@ namespace Eg.rel.AuthService.Data
     {
         public UserContext(DbContextOptions dbContextOptions) : base(dbContextOptions) { }
 
-        public DbSet<LoginEntity>? LoginModels { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
     }
 }   
