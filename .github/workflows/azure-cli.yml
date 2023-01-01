@@ -23,7 +23,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Publish with dotnet
-        run: dotnet publish "Eg.rel/Eg.rel.AuthService/Eg.rel.AuthService.csproj" -c Release -o src/Eg.rel
+        run: dotnet publish "EG.rel/EG.rel/Eg.rel.AuthService/Eg.rel.AuthService.csproj" -c Release -o src/Eg.rel
 
       - name: Create zip archive
         shell: bash
