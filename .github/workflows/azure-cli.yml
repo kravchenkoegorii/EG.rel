@@ -20,7 +20,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build "EG.rel/EG.rel/Eg.rel.AuthService/Eg.rel.AuthService.csproj" --configuration Release
 
       - name: Publish with dotnet
         run: dotnet publish "EG.rel/EG.rel/Eg.rel.AuthService/Eg.rel.AuthService.csproj" -c Release -o src/Eg.rel
