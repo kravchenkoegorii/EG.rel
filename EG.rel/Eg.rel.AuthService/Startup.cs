@@ -1,5 +1,6 @@
 ﻿using Eg.rel.AuthService.Data;
 using Eg.rel.AuthService.Services;
+using Eg.rel.AuthService.Services.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Eg.rel.AuthService
@@ -15,12 +16,13 @@ namespace Eg.rel.AuthService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var a = Configuration.GetSection("Config:ConnectionString").Value;
             services.AddDbContext<UserContext>(options => options
            .UseLazyLoadingProxies()
            .EnableSensitiveDataLogging()
            .UseNpgsql(Configuration.GetSection("Config:ConnectionString").Value, o =>
            {
-               o.UseNetTopologySuite();
+
            })
            .UseSnakeCaseNamingConvention());
 

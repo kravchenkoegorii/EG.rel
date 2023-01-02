@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Eg.rel.AuthService.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20230101214336_initial")]
+    [Migration("20230102091956_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -26,7 +26,6 @@ namespace Eg.rel.AuthService.Migrations
                 .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "postgis");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Eg.rel.AuthService.Models.UserEntity", b =>

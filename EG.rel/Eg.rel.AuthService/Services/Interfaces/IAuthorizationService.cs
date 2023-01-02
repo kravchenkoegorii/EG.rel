@@ -1,6 +1,6 @@
 ﻿using Eg.rel.AuthService.DTOs;
 
-namespace Eg.rel.AuthService.Services
+namespace Eg.rel.AuthService.Services.Interfaces
 {
     public interface IAuthorizationService
     {

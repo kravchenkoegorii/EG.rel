@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Eg.rel.AuthService.Services
+namespace Eg.rel.AuthService.Services.Extensions
 {
     public static class IdentityServiceExtensions
     {

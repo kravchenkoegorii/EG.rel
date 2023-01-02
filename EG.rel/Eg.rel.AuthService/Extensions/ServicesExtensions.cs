@@ -1,4 +1,6 @@
-﻿namespace Eg.rel.AuthService.Services
+﻿using Eg.rel.AuthService.Services.Interfaces;
+
+namespace Eg.rel.AuthService.Services.Extensions
 {
     public static class ServicesExtensions
     {

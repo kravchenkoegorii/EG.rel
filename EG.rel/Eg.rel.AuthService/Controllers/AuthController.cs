@@ -1,5 +1,6 @@
 ﻿using Eg.rel.AuthService.DTOs;
 using Eg.rel.AuthService.Services;
+using Eg.rel.AuthService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
