@@ -62,9 +62,9 @@ jobs:
 
       - name: Analyze project
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"kravchenkoegorii_EG.rel" /o:"eg-rel" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin \k:"kravchenkoegorii_EG.rel" \o:"eg-rel" \d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build -c Release
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner end \d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
       - name: Publish with dotnet
         run: dotnet publish "EG.rel/Eg.rel.AuthService/Eg.rel.AuthService.csproj" -c Release -o src/Eg.rel
