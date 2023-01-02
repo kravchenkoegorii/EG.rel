@@ -45,7 +45,8 @@ jobs:
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
+          mkdir -p .\.sonar\scanner
+          chmod a+rwx .\.sonar\scanner
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
 
       - name: Transform appsettings.json
