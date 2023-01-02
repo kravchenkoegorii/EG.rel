@@ -64,9 +64,6 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"kravchenkoegorii_EG.rel" /o:"eg-rel" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build -c Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-	env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Publish with dotnet
         run: dotnet publish "EG.rel/Eg.rel.AuthService/Eg.rel.AuthService.csproj" -c Release -o src/Eg.rel
