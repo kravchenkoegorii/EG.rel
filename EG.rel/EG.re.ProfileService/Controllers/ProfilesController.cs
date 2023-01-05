@@ -23,14 +23,14 @@ namespace EG.rel.ProfileService.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Profile>>> GetProfiles()
+        public async Task<ActionResult<IEnumerable<ProfileUser>>> GetProfiles()
         {
             var profiles = await _profileService.GetProfiles();
             return Ok(profiles);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Profile>> GetProfile(int id)
+        public async Task<ActionResult<ProfileUser>> GetProfile(int id)
         {
             var profile = await _profileService.GetProfile(id);
 
@@ -54,7 +54,7 @@ namespace EG.rel.ProfileService.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Profile>> UpdateProfile(InsertProfileDto profile)
+        public async Task<ActionResult<ProfileUser>> UpdateProfile(InsertProfileDto profile)
         {
             await _profileService.InsertProfile(profile);
             return Ok();

@@ -1,11 +1,12 @@
 ﻿using EG.rel.ProfileService.Data;
 using EG.rel.ProfileService.DTOs;
 using EG.rel.ProfileService.Entities;
+using EG.rel.ProfileService.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EG.rel.ProfileService.Services
 {
-    public class ProfileService
+    public class ProfileService : IProfileService
     {
         private readonly ProfileDbContext _context;
         private readonly AutoMapper.IMapper _mapper;
@@ -15,12 +16,12 @@ namespace EG.rel.ProfileService.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Profile>> GetProfiles()
+        public async Task<IEnumerable<ProfileUser>> GetProfiles()
         {
             return await _context.Profiles.ToListAsync();
         }
 
-        public async Task<Profile> GetProfile(int id)
+        public async Task<ProfileUser> GetProfile(int id)
         {
             var profile = await _context.Profiles.FindAsync(id);
 
@@ -46,7 +47,7 @@ namespace EG.rel.ProfileService.Services
 
         public async Task<bool> InsertProfile(InsertProfileDto profileDto)
         {
-            var profile = _mapper.Map<Profile>(profileDto);
+            var profile = _mapper.Map<ProfileUser>(profileDto);
             _context.Profiles.Add(profile);
             await _context.SaveChangesAsync();
 

@@ -5,10 +5,10 @@ namespace EG.rel.ProfileService.Services.Interfaces
 {
     public interface IProfileService
     {
-        public Task<IEnumerable<Profile>> GetProfiles();
+        public Task<IEnumerable<ProfileUser>> GetProfiles();
 
 
-        public Task<Profile> GetProfile(int id);
+        public Task<ProfileUser> GetProfile(int id);
 
 
         public Task<bool> UpdateProfile(int id, ProfileDto profileDto);

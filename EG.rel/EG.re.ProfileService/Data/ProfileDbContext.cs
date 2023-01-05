@@ -7,7 +7,7 @@ namespace EG.rel.ProfileService.Data
     {
         public ProfileDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions) { }
 
-        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<ProfileUser> Profiles { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Hobby> Hobbies { get; set; }
     }
