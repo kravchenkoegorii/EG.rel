@@ -1,10 +1,9 @@
-﻿using Eg.rel.AuthService.Data;
-using Eg.rel.AuthService.Services;
-using Eg.rel.AuthService.Services.Extensions;
+using EG.rel.ProfileService.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace Eg.rel.AuthService
+namespace EG.re.ProfileService
 {
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -16,14 +15,12 @@ namespace Eg.rel.AuthService
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserContext>(options => options
+            services.AddDbContext<ProfileDbContext>(options => options
            .UseLazyLoadingProxies()
            .EnableSensitiveDataLogging()
            .UseNpgsql(Configuration.GetSection("Config:ConnectionString").Value)
            .UseSnakeCaseNamingConvention());
 
-            services.AddIdentityServices(Configuration);
-            services.AddApplicationServices();
 
             services.AddSwaggerGen();
             services.AddControllers();
@@ -66,3 +63,4 @@ namespace Eg.rel.AuthService
         }
     }
 }
+

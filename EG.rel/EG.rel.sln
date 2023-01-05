@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eg.rel.AuthService", "Eg.rel.AuthService\Eg.rel.AuthService.csproj", "{61E35401-DFB8-48AF-B15D-D82F78DDF6C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eg.rel.AuthService", "Eg.rel.AuthService\Eg.rel.AuthService.csproj", "{61E35401-DFB8-48AF-B15D-D82F78DDF6C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EG.rel.ProfileService", "EG.re.ProfileService\EG.rel.ProfileService.csproj", "{C191A7EA-7FC3-4228-B444-B8C02971E0F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EG.rel.SearchService", "EG.rel.SearchService\EG.rel.SearchService.csproj", "{6B4F1A81-0FE9-42CA-875F-62A78B0FDBBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{61E35401-DFB8-48AF-B15D-D82F78DDF6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61E35401-DFB8-48AF-B15D-D82F78DDF6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61E35401-DFB8-48AF-B15D-D82F78DDF6C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C191A7EA-7FC3-4228-B444-B8C02971E0F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C191A7EA-7FC3-4228-B444-B8C02971E0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C191A7EA-7FC3-4228-B444-B8C02971E0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C191A7EA-7FC3-4228-B444-B8C02971E0F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4F1A81-0FE9-42CA-875F-62A78B0FDBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4F1A81-0FE9-42CA-875F-62A78B0FDBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4F1A81-0FE9-42CA-875F-62A78B0FDBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4F1A81-0FE9-42CA-875F-62A78B0FDBBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
