@@ -1,7 +1,8 @@
 using EG.rel.ProfileService.Data;
+using EG.rel.ProfileService.MappingProfiles;
 using EG.rel.ProfileService.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-
+using AutoMapper;
 namespace EG.re.ProfileService
 {
 
@@ -21,7 +22,7 @@ namespace EG.re.ProfileService
            .EnableSensitiveDataLogging()
            .UseNpgsql(Configuration.GetSection("Config:ConnectionString").Value)
            .UseSnakeCaseNamingConvention());
-
+            services.AddAutoMapper(typeof(ServiceProfile).Assembly);
             services.AddScoped<IProfileService, rel.ProfileService.Services.ProfileService>();
             services.AddSwaggerGen();
             services.AddControllers();

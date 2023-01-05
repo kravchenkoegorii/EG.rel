@@ -3,9 +3,9 @@ using EG.rel.ProfileService.Entities;
 
 namespace EG.rel.ProfileService.MappingProfiles
 {
-    public class EnergySavingsAnalyticServiceProfile : AutoMapper.Profile
+    public class ServiceProfile : AutoMapper.Profile
     {
-        public EnergySavingsAnalyticServiceProfile()
+        public ServiceProfile()
         {
             CreateMap<EG.rel.ProfileService.Entities.ProfileUser, ProfileDto>().ReverseMap();
             CreateMap<EG.rel.ProfileService.Entities.ProfileUser, InsertProfileDto>().ReverseMap();
