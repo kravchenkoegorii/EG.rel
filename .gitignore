@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Client
+eg.rel.client/node_modules
+*.idea
+
 # User-specific files
 *.rsuser
 *.suo
