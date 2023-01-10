@@ -6,6 +6,7 @@
 # Client
 eg.rel.client/node_modules
 *.idea
+*.vscode
 
 # User-specific files
 *.rsuser
