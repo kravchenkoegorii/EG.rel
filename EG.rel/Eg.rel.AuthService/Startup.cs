@@ -31,7 +31,15 @@ namespace Eg.rel.AuthService
 
             services.AddSwaggerGen();
             services.AddControllers();
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORS", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -54,6 +62,7 @@ namespace Eg.rel.AuthService
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("CORS");
 
             app.UseAuthentication();
             app.UseAuthorization();
