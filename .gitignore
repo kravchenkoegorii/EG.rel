@@ -5,6 +5,7 @@
 
 # Client
 eg.rel.client/node_modules
+*.angular
 *.idea
 *.vscode
 
